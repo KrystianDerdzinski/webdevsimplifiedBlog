@@ -13,10 +13,15 @@ app.get('/', (req, res) => {
 	if (res.statusCode === 200) {
 		const articles = [{
 			title: 'Test article',
-			createdAt: Date.now(),
+			createdAt: new Date(),
 			description: 'Test description'
+		},
+		{
+			title: 'Test article 2',
+			createdAt: new Date(),
+			description: 'Test description 2'
 		}]
-		res.render("index", { articles: 'Hello' })
+		res.render("articles/index", { articles: articles })
 	} else {
 		console.log('something went wrong...')
 	}
